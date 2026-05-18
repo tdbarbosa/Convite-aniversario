@@ -292,13 +292,43 @@ export default function App() {
 
       {/* Main Content Card */}
       <div className="relative z-30 container max-w-lg mx-auto px-6 py-10 min-h-screen flex flex-col justify-center">
+        
+        {/* Floating Jesus - Out of the box to remove the "rectangle" look */}
+        <div className="relative z-50 -mb-24 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative"
+            >
+                {/* Divine Glow behind Jesus */}
+                <div className="absolute inset-0 bg-yellow-100/50 blur-3xl rounded-full scale-125" />
+                
+                <motion.img 
+                  src="/src/assets/images/jesus_painter_user_choice_1779106586711.png" 
+                  alt="Jesus Pintor" 
+                  className="h-72 w-auto relative z-10 mix-blend-multiply"
+                  animate={{ 
+                    y: [0, -12, 0],
+                    rotate: [0, 1, -1, 0],
+                    scale: [1, 1.03, 1]
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                />
+            </motion.div>
+        </div>
+
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-[50px] shadow-[0_40px_100px_rgba(0,0,0,0.15)] relative overflow-hidden flex flex-col border-8 border-white"
+          className="bg-white/90 backdrop-blur-md rounded-[50px] shadow-[0_40px_100px_rgba(0,0,0,0.15)] relative overflow-hidden flex flex-col border-8 border-white"
         >
-          {/* Card Top: Pure White to hide the image background rectangle */}
-          <div className="bg-white pt-12 pb-6 px-8 text-center relative overflow-hidden">
+          {/* Card Top Section - Pure white and more padding for the floating element */}
+          <div className="pt-28 pb-6 px-8 text-center relative overflow-hidden">
              {/* Subtle Rainbow decoration */}
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-80 opacity-20 pointer-events-none flex flex-col items-center">
                 <div className="w-96 h-96 border-[15px] border-red-200 rounded-full" />
@@ -307,25 +337,7 @@ export default function App() {
                 <div className="absolute top-12 w-48 h-48 border-[15px] border-green-200 rounded-full" />
              </div>
  
-             <div className="relative h-60 mb-4 z-10 flex justify-center items-center">
-                <motion.img 
-                  src="/src/assets/images/jesus_painter_perfect_final_1779031287587.png" 
-                  alt="Jesus Pintor" 
-                  className="h-full object-contain"
-                  animate={{ 
-                    y: [0, -10, 0],
-                    rotate: [0, 1, -1, 0],
-                    scale: [1, 1.05, 1]
-                  }}
-                  transition={{ 
-                    duration: 5, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
-                  }}
-                />
-             </div>
- 
-             <h1 className="font-display text-4xl text-pink-500 leading-tight mb-2 relative z-10">
+             <h1 className="font-display text-4xl text-pink-500 leading-tight mb-2 relative z-10 drop-shadow-sm">
                 O Maior Pintor do Mundo
              </h1>
              <motion.div
