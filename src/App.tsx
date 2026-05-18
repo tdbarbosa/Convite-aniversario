@@ -252,7 +252,7 @@ export default function App() {
       {/* Background Layer: Forest */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="images/forest.png" 
+          src="./images/forest.png" 
           alt="Floresta" 
           className="w-full h-full object-cover"
         />
@@ -305,7 +305,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-yellow-100/50 blur-3xl rounded-full scale-125" />
                 
                 <motion.img 
-                  src="images/jesus_painter.png" 
+                  src="./images/jesus_painter.png" 
                   alt="Jesus Pintor" 
                   className="h-72 w-auto relative z-10 mix-blend-multiply"
                   animate={{ 
